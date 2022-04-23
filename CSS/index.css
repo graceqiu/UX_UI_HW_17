@@ -1,8 +1,12 @@
+/* Main */
+
 :root {
     --background: #F5F3EF;
     --accentPrimary: #703017;
     --accentSecondary: #32584C;
-    --text: #181717;
+    --textColor: #181717;
+    --fontPrimary: 'Roboto', sans-serif;
+    --fontSecondary: 'Montserrat', sans-serif;
 }
 
 body {
@@ -14,7 +18,54 @@ body {
     margin: 0% 5%;
 }
 
-/* Nav  */
+/* Text  */
+
+h1, h2, p, a {
+    color: var(--textColor);
+}
+
+h1, h2, a {
+    font-family: var(--fontSecondary);
+    text-transform: lowercase;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -0.08em;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+a {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--accentSecondary);
+    text-decoration: none;
+}
+
+p {
+    font-family: var(--fontPrimary);
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Nav */
+
+header a {
+    text-decoration: none;
+}
 
 header {
     display: flex;
@@ -25,12 +76,15 @@ header {
     height: 10vh;
 }
 
-header img {
-    width: 72px;
-    height: 66px;
+header h1 {
+    color: var(--accentPrimary);
 }
 
-#navItems {
+header h1:hover{
+    color: var(--accentSecondary);
+}
+
+header #primaryNav {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -38,60 +92,85 @@ header img {
     gap: 25%;
 }
 
-#navItems li {
-    list-style-type: none;
-    font-family: 'Montserrat', sans-serif;
+header #primaryNav li a {
     font-size: 24px;
     font-weight: 500;
-    text-transform: lowercase;
 }
 
-/* Hero Image */
+header #primaryNav li a:hover{
+    color: var(--accentSecondary);
+    text-decoration: underline;
+}
 
-.heroImg {
-    width: 100%;
+/* Hero */
+
+.hero {
     height: 90vh;
 }
 
-.heroImg .content {
+/* Home Hero */
+
+#homeHero .content {
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 84%;
 }
 
-.heroImg .content h1 {
+#homeHero .content h1 {
     color: var(--accentPrimary);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
-    font-weight: 600;
-    text-transform: lowercase;
-    letter-spacing: -0.08em;
     text-align: center;
     margin: 0%;
 }
 
-.heroImg .content .heroImgSubtitle {
+#homeHero .content h2 {
+    text-align: center;
+    margin: 0%;
+}
+
+#homeHero .content #subtitleAltText {
+    color: var(--accentSecondary);
+}
+
+/* About Hero */
+
+#aboutHero .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84%;
+    
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
 }
 
-.heroImg .content .heroImgSubtitle h2 {
-    color: var(--text);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 400;
-    text-transform: lowercase;
-    letter-spacing: -0.05em;
-    text-align: center;
-    margin: 0%;
+#aboutHero .content #aboutAltText{
+    color: var(--accentPrimary);
 }
 
-.heroImg .content .heroImgSubtitle .subtext {
+#aboutHero .content img {
+    width: 40%;
+    object-fit: cover;
+}
+
+#aboutHero .content #skillsGrid {
+    display: grid;
+    grid-template-areas: 
+    "skillType1 skillDetails1"
+    "skillType2 skillDetails2"
+    "skillType3 skillDetails3";
+}
+
+/* #aboutHero .content #skillsGrid {
+
+} */
+
+
+#aboutHero .content #skills .skillType {
     color: var(--accentSecondary);
 }
 
@@ -104,11 +183,10 @@ footer {
     justify-content: space-between;
 }
 
-footer p {
-    font-family: 'Montserrat', sans-serif;
+footer h1 {
+    font-family: var(--fontSecondary);
     font-size: 40px;
     font-weight: 600;
-    text-transform: lowercase;
     letter-spacing: -0.05em;
     color: var(--accentSecondary);
 }
@@ -117,13 +195,5 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#footerItems li {
     list-style-type: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: lowercase;
-    text-decoration: underline;
 }
