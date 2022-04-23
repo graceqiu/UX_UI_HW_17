@@ -22,6 +22,7 @@ body {
 
 h1, h2, p, a {
     color: var(--textColor);
+    margin: 0;
 }
 
 h1, h2, a {
@@ -30,7 +31,7 @@ h1, h2, a {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 600;
     letter-spacing: -0.08em;
 }
@@ -141,19 +142,25 @@ header #primaryNav li a:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 84%;
-    
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 5%;
+    gap: 2%;
 }
 
-#aboutHero .content #aboutAltText{
+#aboutHero .content #aboutText{
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#aboutHero .content #aboutText #aboutAltText{
     color: var(--accentPrimary);
 }
 
 #aboutHero .content img {
-    width: 40%;
+    width: 481px;
+    height: 410px;
     object-fit: cover;
 }
 
@@ -163,11 +170,17 @@ header #primaryNav li a:hover{
     "skillType1 skillDetails1"
     "skillType2 skillDetails2"
     "skillType3 skillDetails3";
+    column-gap: 110px;
+    row-gap: 10px;
 }
 
-/* #aboutHero .content #skillsGrid {
+#aboutHero .content #skillsGrid p {
+    text-transform: lowercase;
+}
 
-} */
+#aboutHero .content #skillsGrid .skillType {
+    color: var(--accentSecondary);
+}
 
 
 #aboutHero .content #skills .skillType {
